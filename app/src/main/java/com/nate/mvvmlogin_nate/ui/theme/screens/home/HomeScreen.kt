@@ -29,12 +29,16 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.nate.mvvmlogin_nate.R
 import com.nate.mvvmlogin_nate.ui.theme.MvvmloginnateTheme
+import com.nate.mvvmlogin_nate.ui.theme.screens.login.LoginScreen
+import com.nate.mvvmlogin_nate.ui.theme.screens.register.RegisterScreen
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
             HomeScreen()  // Have to call this function here in main activity otherwise app won't work
+            LoginScreen()
+            RegisterScreen()
         }
     }
 }
