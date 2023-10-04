@@ -30,10 +30,16 @@ import androidx.compose.ui.text.input.TextFieldValue
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavController
+import androidx.navigation.NavHostController
+import androidx.navigation.compose.rememberNavController
+import com.nate.mvvmlogin_nate.navigation.ROUTE_HOME
+import com.nate.mvvmlogin_nate.navigation.ROUTE_LOGIN
+import com.nate.mvvmlogin_nate.navigation.ROUTE_REGISTER
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun LoginScreen() {
+fun LoginScreen(navController: NavHostController) {
 
     var email by remember { mutableStateOf(TextFieldValue(""))}
     var password by remember { mutableStateOf(TextFieldValue(""))}
@@ -82,19 +88,19 @@ fun LoginScreen() {
 
         Spacer(modifier = Modifier.height(40.dp))
 
-        Button(onClick = { /*TODO*/ },
+        Button(onClick = { /*TODO*/ navController.navigate(ROUTE_HOME)},
             colors = ButtonDefaults.buttonColors(Color.Black),
             shape = CircleShape,
             modifier = Modifier
                 .width(350.dp)
                 .padding(10.dp)
         ){
-            Text(text = "Click to Login", fontSize = 20.sp)
+            Text(text = "Click to Login", fontSize = 20.sp, color = Color.White)
         }
 
         Spacer(modifier = Modifier.height(5.dp))
 
-        Button(onClick = { /*TODO*/ },
+        Button(onClick = { /*TODO*/ navController.navigate(ROUTE_REGISTER)},
             colors = ButtonDefaults.buttonColors(Color.Gray),
             shape = CircleShape,
             modifier = Modifier
@@ -130,5 +136,5 @@ fun LoginScreen() {
 @Preview
 @Composable
 fun LoginScreenPrev() {
-    LoginScreen()
+    LoginScreen(rememberNavController())
 }

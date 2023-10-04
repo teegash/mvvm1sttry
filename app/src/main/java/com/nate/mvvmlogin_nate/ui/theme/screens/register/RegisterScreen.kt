@@ -32,10 +32,15 @@ import androidx.compose.ui.text.input.TextFieldValue
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavController
+import androidx.navigation.NavHostController
+import androidx.navigation.compose.rememberNavController
+import com.nate.mvvmlogin_nate.navigation.ROUTE_HOME
+import com.nate.mvvmlogin_nate.navigation.ROUTE_LOGIN
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun RegisterScreen() {
+fun RegisterScreen(navController: NavHostController) {
     var name by remember { mutableStateOf(TextFieldValue(""))}
     var email by remember { mutableStateOf(TextFieldValue(""))}
     var password by remember { mutableStateOf(TextFieldValue(""))}
@@ -102,19 +107,19 @@ fun RegisterScreen() {
 
         Spacer(modifier = Modifier.height(50.dp))
 
-        Button(onClick = { /*TODO*/ },
+        Button(onClick = { /*TODO*/ navController.navigate(ROUTE_HOME)},
             colors = ButtonDefaults.buttonColors(Color.Black),
             shape = CircleShape,
             modifier = Modifier
                 .width(350.dp)
                 .padding(10.dp)
               ){
-            Text(text = "Click to Register", fontSize = 20.sp)
+            Text(text = "Click to Register", fontSize = 20.sp, color = Color.White)
         }
 
         Spacer(modifier = Modifier.height(5.dp))
 
-        Button(onClick = { /*TODO*/ },
+        Button(onClick = { /*TODO*/ navController.navigate(ROUTE_LOGIN)},
             colors = ButtonDefaults.buttonColors(Color.Gray),
             shape = CircleShape,
             modifier = Modifier
@@ -134,5 +139,5 @@ fun RegisterScreen() {
 @Preview
 @Composable
 fun Registerprev() {
-    RegisterScreen()
+    RegisterScreen(rememberNavController())
 }
