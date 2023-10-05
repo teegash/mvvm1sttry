@@ -31,6 +31,12 @@ fun AppNavHost(modifier: Modifier=Modifier,
             composable(ROUTE_REGISTER){
                 RegisterScreen(navController)
             }
+            composable(ROUTE_PRODUCTS){
+                RegisterScreen(navController)
+            }
+            composable(ROUTE_BUYING){
+                RegisterScreen(navController)
+            }
 
         }
 

@@ -35,6 +35,7 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
 import com.nate.mvvmlogin_nate.navigation.ROUTE_HOME
 import com.nate.mvvmlogin_nate.navigation.ROUTE_LOGIN
+import com.nate.mvvmlogin_nate.navigation.ROUTE_PRODUCTS
 import com.nate.mvvmlogin_nate.navigation.ROUTE_REGISTER
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -88,7 +89,7 @@ fun LoginScreen(navController: NavHostController) {
 
         Spacer(modifier = Modifier.height(40.dp))
 
-        Button(onClick = { /*TODO*/ navController.navigate(ROUTE_HOME)},
+        Button(onClick = { /*TODO*/ navController.navigate(ROUTE_PRODUCTS)},
             colors = ButtonDefaults.buttonColors(Color.Black),
             shape = CircleShape,
             modifier = Modifier
