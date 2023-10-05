@@ -67,7 +67,7 @@ fun ProductScreen(navController: NavHostController){
             painter = painterResource(id = R.drawable.bi),
             contentDescription = "Cow",
             modifier = Modifier
-                .width(195.dp)
+                .width(150.dp)
                 .padding(20.dp)
                 .clip(RoundedCornerShape(15.dp)) // property to make curved edges on picture
 
@@ -79,7 +79,7 @@ fun ProductScreen(navController: NavHostController){
                 colors = ButtonDefaults.buttonColors(Color.Black),
                 shape = CircleShape,
                 modifier = Modifier
-                    .width(190.dp)
+                    .width(10.dp)
                     .padding(10.dp)
             ){
                 Text(text = "BUY", fontSize = 20.sp, color = Color.White)
@@ -92,7 +92,7 @@ fun ProductScreen(navController: NavHostController){
                 painter = painterResource(id = R.drawable.bi),
                 contentDescription = "Cow",
                 modifier = Modifier
-                    .width(195.dp)
+                    .width(150.dp)
                     .padding(20.dp)
                     .clip(RoundedCornerShape(15.dp)) // property to make curved edges on picture
 
@@ -104,7 +104,7 @@ fun ProductScreen(navController: NavHostController){
                 colors = ButtonDefaults.buttonColors(Color.Black),
                 shape = CircleShape,
                 modifier = Modifier
-                    .width(190.dp)
+                    .width(150.dp)
                     .padding(10.dp)
             ){
                 Text(text = "BUY", fontSize = 20.sp, color = Color.White)
@@ -117,7 +117,7 @@ fun ProductScreen(navController: NavHostController){
                 painter = painterResource(id = R.drawable.bi),
                 contentDescription = "Cow",
                 modifier = Modifier
-                    .width(195.dp)
+                    .width(150.dp)
                     .padding(20.dp)
                     .clip(RoundedCornerShape(15.dp)) // property to make curved edges on picture
 
@@ -129,7 +129,7 @@ fun ProductScreen(navController: NavHostController){
                 colors = ButtonDefaults.buttonColors(Color.Black),
                 shape = CircleShape,
                 modifier = Modifier
-                    .width(190.dp)
+                    .width(150.dp)
                     .padding(10.dp)
             ){
                 Text(text = "BUY", fontSize = 20.sp, color = Color.White)
@@ -147,7 +147,7 @@ fun ProductScreen(navController: NavHostController){
                 painter = painterResource(id = R.drawable.bi),
                 contentDescription = "Cow",
                 modifier = Modifier
-                    .width(195.dp)
+                    .width(150.dp)
                     .padding(20.dp)
                     .clip(RoundedCornerShape(15.dp)) // property to make curved edges on picture
 
@@ -159,7 +159,7 @@ fun ProductScreen(navController: NavHostController){
                 colors = ButtonDefaults.buttonColors(Color.Black),
                 shape = CircleShape,
                 modifier = Modifier
-                    .width(190.dp)
+                    .width(150.dp)
                     .padding(10.dp)
             ){
                 Text(text = "BUY", fontSize = 20.sp, color = Color.White)
@@ -172,7 +172,7 @@ fun ProductScreen(navController: NavHostController){
                 painter = painterResource(id = R.drawable.bi),
                 contentDescription = "Cow",
                 modifier = Modifier
-                    .width(195.dp)
+                    .width(150.dp)
                     .padding(20.dp)
                     .clip(RoundedCornerShape(15.dp)) // property to make curved edges on picture
 
@@ -184,7 +184,7 @@ fun ProductScreen(navController: NavHostController){
                 colors = ButtonDefaults.buttonColors(Color.Black),
                 shape = CircleShape,
                 modifier = Modifier
-                    .width(190.dp)
+                    .width(150.dp)
                     .padding(10.dp)
             ){
                 Text(text = "BUY", fontSize = 20.sp, color = Color.White)
@@ -197,7 +197,7 @@ fun ProductScreen(navController: NavHostController){
                 painter = painterResource(id = R.drawable.bi),
                 contentDescription = "Cow",
                 modifier = Modifier
-                    .width(195.dp)
+                    .width(150.dp)
                     .padding(20.dp)
                     .clip(RoundedCornerShape(15.dp)) // property to make curved edges on picture
 
@@ -209,7 +209,7 @@ fun ProductScreen(navController: NavHostController){
                 colors = ButtonDefaults.buttonColors(Color.Black),
                 shape = CircleShape,
                 modifier = Modifier
-                    .width(190.dp)
+                    .width(150.dp)
                     .padding(10.dp)
             ){
                 Text(text = "BUY", fontSize = 20.sp, color = Color.White)
