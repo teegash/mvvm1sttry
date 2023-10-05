@@ -79,7 +79,7 @@ fun ProductScreen(navController: NavHostController){
                 colors = ButtonDefaults.buttonColors(Color.Black),
                 shape = CircleShape,
                 modifier = Modifier
-                    .width(10.dp)
+                    .width(150.dp)
                     .padding(10.dp)
             ){
                 Text(text = "BUY", fontSize = 20.sp, color = Color.White)
@@ -135,6 +135,9 @@ fun ProductScreen(navController: NavHostController){
                 Text(text = "BUY", fontSize = 20.sp, color = Color.White)
             }
         }
+
+        Spacer(modifier = Modifier.width(45.dp))
+
 
         Column {
 
