@@ -7,8 +7,10 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import com.nate.mvvmlogin_nate.ui.theme.screens.buy.BuyingScreen
 import com.nate.mvvmlogin_nate.ui.theme.screens.home.HomeScreen
 import com.nate.mvvmlogin_nate.ui.theme.screens.login.LoginScreen
+import com.nate.mvvmlogin_nate.ui.theme.screens.products.ProductScreen
 import com.nate.mvvmlogin_nate.ui.theme.screens.register.RegisterScreen
 
 // create a composable function/ write comp then tab/ then write the long code
@@ -32,10 +34,10 @@ fun AppNavHost(modifier: Modifier=Modifier,
                 RegisterScreen(navController)
             }
             composable(ROUTE_PRODUCTS){
-                RegisterScreen(navController)
+                ProductScreen(navController)
             }
             composable(ROUTE_BUYING){
-                RegisterScreen(navController)
+                BuyingScreen(navController)
             }
 
         }
