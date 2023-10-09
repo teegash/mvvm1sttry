@@ -3,14 +3,10 @@ package com.nate.mvvmlogin_nate.ui.theme.screens.home
 // each screen should have a composable function
 
 
-import android.os.Bundle
-import androidx.activity.ComponentActivity
-import androidx.activity.compose.setContent
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.ColumnScope
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -19,12 +15,17 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Favorite
+import androidx.compose.material.icons.filled.Home
+import androidx.compose.material.icons.filled.Person
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
-import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.Surface
+import androidx.compose.material3.Icon
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.mutableIntStateOf
+import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
@@ -34,14 +35,13 @@ import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import androidx.navigation.NavController
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
 import com.nate.mvvmlogin_nate.R
+import com.nate.mvvmlogin_nate.navigation.ROUTE_CALCULATOR
+import com.nate.mvvmlogin_nate.navigation.ROUTE_INTENT
 import com.nate.mvvmlogin_nate.navigation.ROUTE_LOGIN
-import com.nate.mvvmlogin_nate.ui.theme.MvvmloginnateTheme
-import com.nate.mvvmlogin_nate.ui.theme.screens.login.LoginScreen
-import com.nate.mvvmlogin_nate.ui.theme.screens.register.RegisterScreen
+
 
 //class MainActivity : ComponentActivity() {
 //    override fun onCreate(savedInstanceState: Bundle?) {
@@ -51,6 +51,8 @@ import com.nate.mvvmlogin_nate.ui.theme.screens.register.RegisterScreen
 //        }
 //    }
 //}
+
+
 
 @Composable
 fun HomeScreen(navController: NavHostController){
@@ -69,7 +71,7 @@ fun HomeScreen(navController: NavHostController){
             fontSize = 25.sp
         )
 
-        Spacer(modifier = Modifier.height(40.dp))
+        Spacer(modifier = Modifier.height(20.dp))
 
         Text(text = "Nate's Mobile App",
             color = Color.White,
@@ -77,13 +79,14 @@ fun HomeScreen(navController: NavHostController){
             fontSize = 20.sp
         )
 
-        Spacer(modifier = Modifier.height(30.dp))
+        Spacer(modifier = Modifier.height(5.dp))
 
-        Image(painter = painterResource(id = R.drawable.bi),
+        Image(painter = painterResource(id = R.drawable.kyle),
             contentDescription = "Cow",
-            modifier = Modifier.fillMaxWidth()
-                               .padding(20.dp)
-                               .clip(RoundedCornerShape(15.dp)) // property to make curved edges on picture
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(20.dp)
+                .clip(RoundedCornerShape(150.dp)) // property to make curved edges on picture
         )
 
 //        Spacer(modifier = Modifier.height(30.dp))
@@ -92,7 +95,7 @@ fun HomeScreen(navController: NavHostController){
 //            contentDescription = "glasses",
 //            modifier = Modifier.fillMaxWidth()
 //        )
-        Spacer(modifier = Modifier.height(40.dp))
+        Spacer(modifier = Modifier.height(0.dp))
 
         Button(onClick = { navController.navigate(ROUTE_LOGIN) },
             colors = ButtonDefaults.buttonColors(Color.Black),
@@ -104,9 +107,68 @@ fun HomeScreen(navController: NavHostController){
             Text(text = "Login", fontSize = 20.sp, color = Color.White)
         }
 
+        Spacer(modifier = Modifier.height(10.dp))
+
+        Button(onClick = { navController.navigate(ROUTE_CALCULATOR) },
+            colors = ButtonDefaults.buttonColors(Color.Black),
+            shape = CircleShape,
+            modifier = Modifier
+                .width(300.dp)
+                .padding(10.dp)
+        ){
+            Text(text = "Calculator", fontSize = 20.sp, color = Color.White)
+        }
+
+        Spacer(modifier = Modifier.height(10.dp))
+
+        Button(onClick = { navController.navigate(ROUTE_INTENT) },
+            colors = ButtonDefaults.buttonColors(Color.Black),
+            shape = CircleShape,
+            modifier = Modifier
+                .width(300.dp)
+                .padding(10.dp)
+        ){
+            Text(text = "Intent", fontSize = 20.sp, color = Color.White)
+        }
+
     }
 
 }
+//
+//@Composable
+//fun BottomBar() {
+//    val selectedIndex = remember { mutableIntStateOf(0) }
+//    BottomNavigation(elevation = 10.dp) {
+//
+//        BottomNavigationItem(icon = {
+//            Icon(imageVector = Icons.Default.Home,"")
+//        },
+//            label = { Text(text = "Home") },
+//            selected = (selectedIndex.value == 0),
+//            onClick = {
+//                selectedIndex.value = 0
+//            })
+//
+//        BottomNavigationItem(icon = {
+//            Icon(imageVector = Icons.Default.Favorite,"")
+//        },
+//            label = { Text(text = "Favorite") },
+//            selected = (selectedIndex.value == 1),
+//            onClick = {
+//                selectedIndex.value = 1
+//            })
+//
+//        BottomNavigationItem(icon = {
+//            Icon(imageVector = Icons.Default.Person,"")
+//        },
+//            label = { Text(text = "Profile") },
+//            selected = (selectedIndex.value == 2),
+//            onClick = {
+//                selectedIndex.value = 2
+//            })
+//    }
+//}
+
 
 // This code is optional- used for preview
 @Preview(showBackground = true)

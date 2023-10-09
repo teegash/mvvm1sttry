@@ -39,10 +39,10 @@ fun BuyingScreen(navController: NavHostController) {
 
 
         Text(
-            text = "YOU DID IT!!!",
+            text = "THANKS, COME AGAIN!!!",
             color = Color.White,
             fontFamily = FontFamily.Serif,
-            fontSize = 40.sp
+            fontSize = 25.sp
         )
 
         Spacer(modifier = Modifier.height(100.dp))
