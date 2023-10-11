@@ -5,6 +5,7 @@ import android.content.Intent
 import android.content.pm.PackageManager
 import android.net.Uri
 import android.provider.MediaStore
+import androidx.compose.animation.animateContentSize
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
@@ -45,7 +46,7 @@ import com.nate.mvvmlogin_nate.navigation.ROUTE_LOGIN
 @Composable
 fun IntentScreen(navController: NavHostController) {
 
-    val context= LocalContext.current
+    val context= LocalContext.current // added to import the context
 
     // Create the following buttons: camera, sms, dial, mpesa, email, share, call
 
