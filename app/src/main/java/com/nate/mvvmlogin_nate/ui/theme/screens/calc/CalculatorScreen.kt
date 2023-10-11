@@ -49,7 +49,7 @@ fun CalculatorScreen(navController: NavHostController) {
 
         Spacer(modifier = Modifier.height(30.dp))
 
-        Text(text = "Answer",
+        Text(text = "Calculator",
             color = Color.White,
             fontSize = 30.sp)
 
@@ -76,7 +76,18 @@ fun CalculatorScreen(navController: NavHostController) {
         Spacer(modifier = Modifier.height(25.dp))
 
         Row {
-            Button(onClick = { navController.navigate(ROUTE_LOGIN) },
+            Button(onClick = {
+                  val myfirstnum= firstnum.text.trim()
+                  val mysecondnum= secondnum.text.trim()
+
+                if(myfirstnum.isEmpty() || mysecondnum.isEmpty()) {  // I had used && (which means if any one of the expression/condition evaluates to be false the whole thing is false) instead of || in the expression but the app crashed if I leave only one space blank. Now it works perfectly cps the || means that if any one of the expression/condition evaluates to true whole thing becomes true.
+                    answer = "Please input number"
+                }else {
+                    val myanswer = myfirstnum.toDouble() + mysecondnum.toDouble()
+                    answer = myanswer.toString()
+                }
+
+            }, // Removed navigation as that is not what we want, we want this button to add instead
                 colors = ButtonDefaults.buttonColors(Color.Black),
                 shape = CircleShape,
                 modifier = Modifier
@@ -88,7 +99,17 @@ fun CalculatorScreen(navController: NavHostController) {
 
             Spacer(modifier = Modifier.width(15.dp))
 
-            Button(onClick = { navController.navigate(ROUTE_LOGIN) },
+            Button(onClick = {
+                val myfirstnum= firstnum.text.trim()
+                val mysecondnum= secondnum.text.trim()
+
+                if(myfirstnum.isEmpty() || mysecondnum.isEmpty()) {
+                    answer = "Please input number"
+                }else {
+                    val myanswer = myfirstnum.toDouble() - mysecondnum.toDouble()
+                    answer = myanswer.toString()
+                }
+            },
                 colors = ButtonDefaults.buttonColors(Color.Black),
                 shape = CircleShape,
                 modifier = Modifier
@@ -102,7 +123,17 @@ fun CalculatorScreen(navController: NavHostController) {
         Spacer(modifier = Modifier.height(15.dp))
 
         Row {
-            Button(onClick = { navController.navigate(ROUTE_LOGIN) },
+            Button(onClick = {
+                val myfirstnum= firstnum.text.trim()
+                val mysecondnum= secondnum.text.trim()
+
+                if(myfirstnum.isEmpty() || mysecondnum.isEmpty()) {
+                    answer = "Please input number"
+                }else {
+                    val myanswer = myfirstnum.toDouble() * mysecondnum.toDouble()
+                    answer = myanswer.toString()
+                }
+            },
                 colors = ButtonDefaults.buttonColors(Color.Black),
                 shape = CircleShape,
                 modifier = Modifier
@@ -114,7 +145,17 @@ fun CalculatorScreen(navController: NavHostController) {
 
             Spacer(modifier = Modifier.width(15.dp))
 
-            Button(onClick = { navController.navigate(ROUTE_LOGIN) },
+            Button(onClick = {
+                val myfirstnum= firstnum.text.trim()
+                val mysecondnum= secondnum.text.trim()
+
+                if(myfirstnum.isEmpty() || mysecondnum.isEmpty()) {
+                    answer = "Please input number"
+                }else {
+                    val myanswer = myfirstnum.toDouble() / mysecondnum.toDouble()
+                    answer = myanswer.toString()
+                }
+            },
                 colors = ButtonDefaults.buttonColors(Color.Black),
                 shape = CircleShape,
                 modifier = Modifier
@@ -124,6 +165,12 @@ fun CalculatorScreen(navController: NavHostController) {
                 Text(text = "/", fontSize = 20.sp, color = Color.White)
             }
         }
+
+        Spacer(modifier = Modifier.height(30.dp))
+
+        Text(text = answer,
+            color = Color.White,
+            fontSize = 25.sp)
 
 
     }
