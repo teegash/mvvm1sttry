@@ -69,11 +69,11 @@ fun IntentScreen(navController: NavHostController) {
 
 
         Button(onClick = {
-            val uri = Uri.parse("sms to:0707694388")
+            val uri = Uri.parse("sms to:254707694388")
 
             val intent = Intent(Intent.ACTION_SENDTO, uri)
 
-            intent.putExtra("Hello", "How is today's weather")
+            intent.putExtra("Hello", "How you doing?")
 
             context.startActivity(intent)
         },
@@ -134,7 +134,16 @@ fun IntentScreen(navController: NavHostController) {
 
         Spacer(modifier = Modifier.height(5.dp))
 
-        Button(onClick = { navController.navigate(ROUTE_INTENT) },
+        Button(onClick = {
+            val emailIntent =
+                Intent(Intent.ACTION_SENDTO, Uri.fromParts("mailto", "nategadgets@gmail.com", null))
+
+            emailIntent.putExtra(Intent.EXTRA_SUBJECT, "RE:")
+
+            emailIntent.putExtra(Intent.EXTRA_TEXT, "Body")
+
+            context.startActivity(Intent.createChooser(emailIntent, "Send email..."))
+        },
             colors = ButtonDefaults.buttonColors(Color.Black),
             shape = CircleShape,
             modifier = Modifier
