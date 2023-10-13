@@ -66,25 +66,37 @@ fun IntentScreen(navController: NavHostController) {
 
         Spacer(modifier = Modifier.height(30.dp))
 
-
-
         Button(onClick = {
-            val uri = Uri.parse("sms to:254707694388")
-
+            val uri = Uri.parse("smsto:254707694388")
             val intent = Intent(Intent.ACTION_SENDTO, uri)
-
-            intent.putExtra("Hello", "How you doing?")
-
+            intent.putExtra("sms_body", "Hello! How are you?")
             context.startActivity(intent)
-        },
-            colors = ButtonDefaults.buttonColors(Color.Black),
+        }, colors = ButtonDefaults.buttonColors(Color.Black),
             shape = CircleShape,
             modifier = Modifier
                 .width(140.dp)
-                .padding(10.dp)
-        ){
+                .padding(10.dp)) {
             Text(text = "SMS", fontSize = 20.sp, color = Color.White)
         }
+
+        // The below code was the original but didn't work. Solved the bug using ai.
+//        Button(onClick = {
+//            val uri = Uri.parse("sms to:254707694388")
+//
+//            val intent = Intent(Intent.ACTION_SENDTO, uri)
+//
+//            intent.putExtra("Hello", "How you doing?")
+//
+//            context.startActivity(intent)
+//        },
+//            colors = ButtonDefaults.buttonColors(Color.Black),
+//            shape = CircleShape,
+//            modifier = Modifier
+//                .width(140.dp)
+//                .padding(10.dp)
+//        ){
+//            Text(text = "SMS", fontSize = 20.sp, color = Color.White)
+//        }
 
         Spacer(modifier = Modifier.height(5.dp))
 
